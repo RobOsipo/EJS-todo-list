@@ -4,15 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
     <title>Document</title>
 </head>
-<body style="backgroundColor:lightgrey">
+<body>
+    <div class="box" id="heading">
+        <% if (typeOfDay === "Saturday" || typeOfDay === "Sunday"){ %>
+            <h1 style="color:rgb(22, 182, 182)"> <%= typeOfDay %> ToDo List</h1>
+        <% } else { %>
+            <h1 style="color:rgb(69, 69, 233)"> <%= typeOfDay %> ToDo List</h1>
+        <% } %>
+    </div>
 
-<% if (typeOfDay === "Saturday" || typeOfDay === "Sunday"){ %>
-    <h1 style="color:rgb(22, 182, 182)"> <%= typeOfDay %> ToDo List</h1>
-<% } else { %>
-    <h1 style="color:rgb(69, 69, 233)"> <%= typeOfDay %> ToDo List</h1>
-<% } %>
+
+
+
+<div class="box">
+
+    <% for (let i = 0; i < newListItems.length; i++) { %>  
+       
+        <div class="item">
+            <input type="checkbox">
+            <p><%= newListItems[i] %></p>
+        </div>
+        
+    <% } %>
+
+
+    <form class="" action="/" method="post">
+        <input type="text" name="nextTodo" placeholder="New item" autocomplete="off">
+        <button type="submit" name="button">+</button>
+    </form>
+
+</div>
+
+   
+<!-- <% for (let i = 0; i < newListItems.length; i++) { %>  
+    <li><%= newListItems[i] %></li>
+<% } %> -->
+
+
+
+
 
 
 
