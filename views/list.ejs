@@ -6,7 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <h1>It's a <%= typeOfDay %>!</h1>
+<body style="backgroundColor:lightgrey">
+
+<% if (typeOfDay === "Saturday" || typeOfDay === "Sunday"){ %>
+    <h1 style="color:rgb(22, 182, 182)"> <%= typeOfDay %> ToDo List</h1>
+<% } else { %>
+    <h1 style="color:rgb(69, 69, 233)"> <%= typeOfDay %> ToDo List</h1>
+<% } %>
+
+
+
+
+
+
+
 </body>
 </html>

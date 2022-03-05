@@ -44,6 +44,8 @@ app.get('/', (req, res) => {
             day = 'Saturday'
             res.render('list', {typeOfDay: day})
             break;
+        default:
+            console.log('ERROR! Current Day is equal to ' + currentDay + ', it need to be 0 - 6')
     }
 
 })
