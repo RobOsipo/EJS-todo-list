@@ -1,18 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Document</title>
-</head>
-<body>
+
+<%- include("header") -%>
+
     <div class="box" id="heading">
-        <% if (typeOfDay === "Saturday" || typeOfDay === "Sunday"){ %>
-            <h1 style="color:rgb(202, 207, 207)"> <%= typeOfDay %></h1>
+        <% if (listTitle === "Saturday" || listTitle === "Sunday"){ %>
+            <h1 style="color:rgb(202, 207, 207)"> <%= listTitle %></h1>
         <% } else { %>
-            <h1 style="color:rgb(234, 234, 241)"> <%= typeOfDay %></h1>
+            <h1 style="color:rgb(234, 234, 241)"> <%= listTitle %></h1>
         <% } %>
     </div>
 
@@ -33,11 +26,12 @@
 
     <form class="" action="/" method="post">
         <input type="text" name="nextTodo" placeholder="New item" autocomplete="off">
-        <button type="submit" name="button">+</button>
+        <button type="submit" name="list" value="<%= listTitle %>">+</button>
     </form>
 
 </div>
 
+<%- include("footer") -%>
    
 <!-- <% for (let i = 0; i < newListItems.length; i++) { %>  
     <li><%= newListItems[i] %></li>
@@ -53,5 +47,3 @@
 
 
 
-</body>
-</html>
